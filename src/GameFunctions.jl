@@ -1,4 +1,4 @@
-function get_player_actions()
+function get_players_action()
     print("\n"
     * "Press 1 to select Rock\n"
     * "Press 2 to select Paper\n"
