@@ -5,7 +5,8 @@
 include("GameFunctions.jl");
 
 # A quick game guide:
-print("Rules in winning the game are:\n"
+print(
+    "Rules in winning the game are:\n"
     * "Rock vs Paper -> Paper wins because it covers Rock\n"
     * "Paper vs Scissors -> Scissors wins because it cuts Paper\n"
     * "Scissors vs Rock -> Rock wins because it smashes Scissors\n"
