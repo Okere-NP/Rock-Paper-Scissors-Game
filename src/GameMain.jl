@@ -24,7 +24,7 @@ begin   # To automatically run the Game logic. . .
         end
 
         print("\nDo you want to play again?\n"
-        * """Press (y for Yes) or (n for No, or press "Enter" to Exit)\n"""
+        * "Press (y for Yes) or (n for No, or press \"Enter\" to Exit)\n"
         * "Enter choice: ")
         user_choice = readline()
 
