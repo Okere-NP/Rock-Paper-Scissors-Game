@@ -22,8 +22,8 @@ end
 function winner_determination(actions)
     game_option, user_option, computer_option = actions
 
-    print("\nYou selected $(user_option) and Computer selected $(co)\n")
-    if user_option == co
+    print("\nYou selected $(user_option) and Computer selected $(computer_option)\n")
+    if user_option == computer_option
         println("You both selected $(user_option),\n"
         * "it's a tie!")
 
