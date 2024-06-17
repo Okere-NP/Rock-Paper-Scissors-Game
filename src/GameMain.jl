@@ -18,8 +18,8 @@ begin   # To automatically run the Game logic. . .
         try
             player_action = get_players_action()    # Function to get user and computer selection...
             winner_determination(player_action)  # Function to determine who won or lost...
-        catch
-            @warn "You entered an invalid option, Kindly try again..."
+        catch e
+            @warn "An error occurred: $e. Kindly try again..."
             continue # Get back to game logic...
         end
 
