@@ -5,46 +5,56 @@ function get_players_action()
     * "Press 3 to select Scissors\n"
     * "Enter option: "); user_input = parse(Int, readline())
 
-    global game_option = ("Rock", "Paper", "Scissors")
-    global user_option = game_option[user_input]
-    global computer_option = rand(game_option)
+    game_option = ("Rock", "Paper", "Scissors")
+    user_option = game_option[user_input]
+    computer_option = rand(game_option)
 
-    return user_option, computer_option
-end;
+    return (game_option, user_option, computer_option)
+end
 
-function winner_determination()
-    print("\nYou selected $(user_option) and Computer selected $(computer_option)\n")
-    if user_option == computer_option
-        println("You both selected $(user_option),\n"
+function winner_determination(actions)
+    #=
+        go = game_option
+        uo = user_option
+        co = computer_option
+        actions = (game_option, user_option, computer_option)
+    =#  go, uo, co = actions
+
+    print("\nYou selected $(uo) and Computer selected $(co)\n")
+    if uo == co
+        println("You both selected $(uo),\n"
         * "it's a tie!")
 
-    elseif user_option == game_option[1]        # User selected ROCK...
-        if computer_option == game_option[2]    # Computer selected PAPER...
-            println("$(game_option[2]) covers $(game_option[1]),\n"
+    elseif uo == go[1]    # User selected ROCK...
+        if co == go[2]    # Computer selected PAPER...
+            println("$(go[2]) covers $(go[1]),\n"
             * "Computer won and You lost...")
         else
-            println("$(game_option[1]) smashes $(game_option[3]),\n"
+            co == go[3]
+            println("$(go[1]) smashes $(go[3]),\n"
             * "You won and Computer lost...")
         end
 
-    elseif user_option == game_option[2]        # User selected PAPER...
-        if computer_option == game_option[3]    # Computer selected SCISSORS...
-            println("$(game_option[3]) cuts $(game_option[2]),\n"
+    elseif uo == go[2]    # User selected PAPER...
+        if co == go[3]    # Computer selected SCISSORS...
+            println("$(go[3]) cuts $(go[2]),\n"
             * "Computer won and You lost...")
         else
-            println("$(game_option[2]) covers $(game_option[1]),\n"
+            co == go[1]   # Computer selected ROCK...
+            println("$(go[2]) covers $(go[1]),\n"
             * "You won and Computer lost...")
         end
 
-    elseif user_option == game_option[3]        # User selected SCISSORS...
-        if computer_option == game_option[1]    # Computer selected ROCK...
-            println("$(game_option[1]) smashes $(game_option[3]),\n"
+    elseif uo == go[3]    # User selected SCISSORS...
+        if co == go[1]    # Computer selected ROCK...
+            println("$(go[1]) smashes $(go[3]),\n"
             * "Computer won and You lost...")
         else
-            println("$(game_option[3]) cuts $(game_option[2]),\n"
+            co == go[2]   # Computer selected PAPER...
+            println("$(go[3]) cuts $(go[2]),\n"
             * "You won and Computer lost...")
         end
 
     end
 
-end;
+end
