@@ -7,7 +7,7 @@ function get_players_action()
 
     # Ensure valid input
     while user_input < 1 || user_input > 3
-        println("\nnvalid option. Please select 1, 2, or 3.")
+        println("\nInvalid option. Please select 1, 2, or 3.")
         print("Enter option: ")
         user_input = parse(Int, readline())
     end
